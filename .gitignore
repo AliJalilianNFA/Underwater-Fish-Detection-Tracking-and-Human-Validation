@@ -1,0 +1,38 @@
+﻿# Python
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+
+# Model weights
+*.pth
+*.ckpt
+*.pt
+*.onnx
+
+# Datasets and videos
+*.mp4
+*.avi
+*.mov
+*.zip
+dataset_coco/
+downloads/
+
+# Generated results
+outputs/
+results/
+runs/
+local_test/
+*.log
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# System files
+.DS_Store
+Thumbs.db

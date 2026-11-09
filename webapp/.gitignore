@@ -1,0 +1,63 @@
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.key
+
+# Model weights
+*.pth
+*.pt
+*.onnx
+*.safetensors
+
+# Videos
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.MP4
+
+# Generated results
+outputs/*
+!outputs/.gitkeep
+*_tracked*.mp4
+*_tracks*.json
+*_results*.json
+
+# Temporary and training data
+frames/
+training_frames/
+temp/
+tmp/
+
+# Logs and notebooks
+*.log
+.ipynb_checkpoints/
+
+# Operating system
+.DS_Store
+Thumbs.db
+# Local archives and development backups
+*backup*
+*.before_*
+clipsift_github_handoff/
+
+# Local configuration
+config/local.*
+*.local.json
