@@ -1,8 +1,36 @@
-﻿# Underwater Fish Detection, Tracking and Human Validation
+# Underwater Fish Detection, Tracking and Human Validation
 
 An experimental AI-assisted system for detecting and tracking fish in underwater videos, with human review of model predictions.
 
 Developed as part of the ClipSift work at RBC HubHacks 2026, with further work on RF-DETR fine-tuning, tiled inference, tracking and validation.
+
+## Application Screenshots
+
+The prototype runs locally. Screenshots show an example analysis; detected candidate tracks and review decisions are **not** equivalent to a verified fish-abundance estimate.
+
+### 1. Videos — Run a local analysis
+
+Select a local underwater video, choose a subsample timestamp, and start the RF-DETR + ByteTrack pipeline. Previous analysis runs can also be reopened.
+
+![ClipSift Videos page showing local video analysis controls](docs/screenshots/videos.jpg)
+
+### 2. Subsamples — Inspect AI candidates
+
+Explore the selected protocol window, track summaries, candidate evidence images, and related technical information.
+
+![ClipSift Subsamples page showing candidate evidence gallery and analysis overview](docs/screenshots/subsamples.jpg)
+
+### 3. Human Review — Verify candidate tracks
+
+Inspect evidence and original-frame context before recording a human decision, such as fish, equipment, background, or uncertain.
+
+![ClipSift Human Review page showing fish candidate evidence and review controls](docs/screenshots/human-review.jpg)
+
+### 4. Results — Summarize the review
+
+Review candidate totals, human-review progress, classification breakdown, and exportable results. Final fish abundance remains pending until duplicate resolution and protocol validation.
+
+![ClipSift Results page showing review progress and classification summary](docs/screenshots/results.jpg)
 
 ## What This Project Does
 
@@ -22,6 +50,7 @@ The system is not a validated fully automatic fish-counting solution. Human revi
 
 ## Workflow
 
+```text
 Underwater Video
     |
     v
@@ -38,12 +67,14 @@ Human Review
     |
     v
 Results and Reporting
+```
 
 ## Project Structure
 
 - `webapp/` - Local ClipSift V6 application, API and interface
 - `experiments/digi4eco-finetuned/` - Experimental detector and comparison tools
 - `training/scripts/` - Dataset preparation, annotation preview and fine-tuning scripts
+- `docs/screenshots/` - UI screenshots for this README
 
 ## Web Application
 
@@ -75,7 +106,7 @@ $env:CLIPSIFT_MODEL_PATH = "C:\path\to\digi4eco_best.pth"
 
 cd webapp
 
-python -m uvicorn app.local_api:app --host 127.0.0.1 --port 8770
+& ..\.venv\Scripts\python.exe -m uvicorn app.local_api:app --host 127.0.0.1 --port 8770
 ```
 
 Open:
